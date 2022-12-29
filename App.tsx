@@ -4,11 +4,7 @@ import Header from "./components/Header";
 import TodoItem from "./components/TodoItem";
 import AddTodo from "./components/AddTodo";
 export default function App() {
-  const [todos, setTodos] = useState([
-    { text: "buy coffe", key: 1 },
-    { text: "go to work", key: 2 },
-    { text: "go home", key: 3 },
-  ]);
+  const [todos, setTodos] = useState([]);
 
   const deleteTodos = (id: number) => {
     setTodos(todos.filter((todo: ObjectType) => todo.key != id));

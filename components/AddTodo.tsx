@@ -5,6 +5,7 @@ import {
   StyleSheet,
   Button,
   TouchableOpacity,
+  Alert,
 } from "react-native";
 
 export default function AddTodo(props: AddTodoProps) {
@@ -31,6 +32,8 @@ export default function AddTodo(props: AddTodoProps) {
           onPress={() => {
             if (task.length > 0) {
               submit(task);
+            } else {
+              Alert.alert("Task is empty!", "Please write something")
             }
 
             setTask("");
