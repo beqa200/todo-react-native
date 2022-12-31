@@ -4,7 +4,7 @@ import {
   View,
   FlatList,
   TouchableWithoutFeedback,
-  Keyboard
+  Keyboard,
 } from "react-native";
 import Header from "./components/Header";
 import TodoItem from "./components/TodoItem";
@@ -17,19 +17,23 @@ export default function App() {
   };
 
   return (
-    <TouchableWithoutFeedback onPress={() => {
-      Keyboard.dismiss();
-    }}>
+    <TouchableWithoutFeedback
+      onPress={() => {
+        Keyboard.dismiss();
+      }}
+    >
       <View style={styles.container}>
         <Header />
-        <AddTodo todos={todos} setTodos={setTodos} />
-        <View style={styles.todosWrapper}>
-          <FlatList
-            data={todos}
-            renderItem={({ item }) => (
-              <TodoItem item={item} deleteTodos={deleteTodos} />
-            )}
-          />
+        <View style={styles.content}>
+          <AddTodo todos={todos} setTodos={setTodos} />
+          <View style={styles.todosWrapper}>
+            <FlatList
+              data={todos}
+              renderItem={({ item }) => (
+                <TodoItem item={item} deleteTodos={deleteTodos} />
+              )}
+            />
+          </View>
         </View>
       </View>
     </TouchableWithoutFeedback>
@@ -39,6 +43,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#fff",
+    flex: 1,
   },
 
   todos: {
@@ -48,7 +53,12 @@ const styles = StyleSheet.create({
 
   todosWrapper: {
     marginTop: 40,
+    height: 500,
+  },
+
+  content: {
     width: 300,
-    margin: 50,
+    marginLeft: 50,
+    flex: 1,
   },
 });

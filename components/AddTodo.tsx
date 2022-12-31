@@ -48,7 +48,6 @@ export default function AddTodo(props: AddTodoProps) {
 
 const styles = StyleSheet.create({
   input: {
-    marginLeft: 50,
     marginTop: 20,
     height: 35,
     width: 300,
@@ -58,7 +57,6 @@ const styles = StyleSheet.create({
 
   button: {
     width: 300,
-    marginLeft: 50,
     marginTop: 20,
   },
 });
