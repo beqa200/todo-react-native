@@ -6,13 +6,16 @@ export default function TodoItem(props: TodoItemProps) {
   return (
     <TouchableOpacity>
       <View style={styles.wrapper}>
+        
+        <Text style={styles.item}>{props.item.text}</Text>
+
         <MaterialIcons
           name="delete"
           size={24}
           color="black"
+          style={{marginRight: 20}}
           onPress={() => props.deleteTodos(props.item.key)}
         />
-        <Text style={styles.item}>{props.item.text}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -21,6 +24,7 @@ export default function TodoItem(props: TodoItemProps) {
 const styles = StyleSheet.create({
   item: {
     padding: 16,
+    width: 244,
   },
   wrapper: {
     borderColor: "#bbb",
@@ -30,5 +34,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     paddingLeft: 10,
+    margin: 8
   },
 });
