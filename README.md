@@ -1,3 +1,3 @@
 Todo App
 
-![](./design/Screenshot_20230101-140506.png)
+<img src="design/screenshot.png" width="300" style="top: 600px" />
